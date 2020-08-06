@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form type</title>
+    <link rel="stylesheet" href="./css/ui.css">
+</head>
+<body>
+    <h1>Form</h1>
+    <hr>
+    <section>
+        <article class="ui-article">
+            <h3>Check box</h3>
+            <div class="ui-inner">
+                <h4>Default</h4>
+                <div class="ui-item">
+                    <span class="input-check">
+                        <input type="checkbox" id="CHK_1" checked>
+                        <label for="CHK_1">Check 1</label>
+                    </span>
+                    <span class="input-check">
+                        <input type="checkbox" id="CHK_2">
+                        <label for="CHK_2">Check 2</label>
+                    </span>
+                    <span class="input-check">
+                        <input type="checkbox" id="CHK_3">
+                        <label for="CHK_3">Check 3</label>
+                    </span>
+                </div>
+    
+                <h4>Custom</h4>
+                <div class="ui-item">
+                    <span class="input-check--custom">
+                        <input type="checkbox" id="CHK_4">
+                        <label for="CHK_4">Check 1 <span></span></label>
+                    </span> |
+                    <span class="input-check--custom">
+                        <input type="checkbox" id="CHK_5">
+                        <label for="CHK_5">Check 2 <span></span></label>
+                    </span> |
+                    <span class="input-check--custom">
+                        <input type="checkbox" id="CHK_6">
+                        <label for="CHK_6">Check 3 <span></span></label>
+                    </span>
+                </div>
+    
+                <h4>No label</h4>
+                <div class="ui-item">
+                    <span class="input-check"> 
+                        <input type="checkbox" id="CHK_7" value="option1" aria-label="...">
+                    </span>
+                </div>
+    
+                <h4>Toggle type</h4>
+                <div class="ui-item">
+                    <div class="input-toggle">
+                        <label for="TG_1">
+                            <input type="checkbox" id="TG_1">
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="ui-article">
+            <h3>Radio</h3>
+            <div class="ui-inner">
+                <h4>Default</h4>
+                <div class="ui-item">
+                    <span class="input-radio">
+                        <input type="radio" id="RDO_1" name="type">
+                        <label for="RDO_1">Radio 1</label>
+                    </span>
+                    <span class="input-radio">
+                        <input type="radio" id="RDO_2" name="type">
+                        <label for="RDO_2">Radio 2</label>
+                    </span>
+                    <span class="input-radio">
+                        <input type="radio" id="RDO_3" name="type">
+                        <label for="RDO_3">Radio 3</label>
+                    </span>
+                </div>
+                <h4>Custom</h4>
+                <div class="ui-item">
+                    <span class="input-radio--custom">
+                        <input type="radio" id="RDO_4" name="type">
+                        <label for="RDO_4">Radio 1</label>
+                    </span>
+                    <span class="input-radio--custom">
+                        <input type="radio" id="RDO_5" name="type">
+                        <label for="RDO_5">Radio 2</label>
+                    </span>
+                    <span class="input-radio--custom">
+                        <input type="radio" id="RDO_6" name="type">
+                        <label for="RDO_6">Radio 3</label>
+                    </span>
+                </div>
+                <h4>No label</h4>
+                <div class="ui-item">
+                    <span class="input-radio"> 
+                        <input type="radio" id="RDO_7" value="option1" naeme="type" aria-label="...">
+                    </span>
+                </div>
+            </div>
+        </article>
+
+        <article class="ui-article">
+            <h3>Select list</h3>
+            <div class="ui-inner">
+                <h4>Default custom</h4>
+                <div class="ui-item">
+                    <span class="input-select">
+                        <select name="" id="">
+                            <option value="">Optionn 1</option>
+                            <option value="">Optionn 2</option>
+                            <option value="" selected>Option 3</option>
+                        </select>
+                    </span>
+                </div>
+                <h4>Button type</h4>
+                <div class="ui-item">
+                    <span class="input-select--button">
+                        <button type="button">Select</button>
+                        <select name="">
+                            <option value="">type1</option>
+                            <option value="">type2</option>
+                            <option value="">type3</option>
+                        </select>
+                        <ul>
+                            <li>type1</li>
+                            <li>type2</li>
+                        </ul>
+                    </span>
+                    
+                </div>
+            </div>
+        </article>
+
+        <article class="ui-article">
+            <h3>Text Input</h3>
+            <div class="ui-inner">
+                <h4>Text</h4>
+                <div class="ui-item">
+                    <input type="text">
+                </div>
+                <div class="ui-item">
+                    <span class="input-text">
+                        <input type="text">
+                    </span>
+                </div>
+                <h4>Textarea</h4>
+                <div class="ui-item">
+                    <span class="input-textarea">
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </span>
+                </div>
+            </div>
+        </article>
+
+        <article class="ui-article">
+            <h3>File</h3>
+            <div class="ui-inner">
+                <h4>Custom</h4>
+                <div class="ui-item">
+                    <div class="input-file">
+                        <button type="button" class="btn-input">Input File</button>
+                        <input type="file" multiple="multiple">
+                        <ul class="file-list"></ul>
+                   </div>
+                </div>
+                <h4>Drag &amp; Drop</h4>
+                <div class="ui-item">
+                    <div class="input-file--dragndrop">
+                        <div class="drop-area">
+                            <p style="margin-top: 55px;">Drag files here or click to upload</p>
+                            <div class="output"></div>
+                            <input type="file" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <section>
+        <article class="ui-article">
+            <h3>Form Grid</h3>
+            <div class="ui-inner">
+                <div class="ui-item">
+                    <div class="col-input">
+                        <dl class="col-half">
+                            <dt>
+                                <label for="INP_1">Title</label>
+                            </dt>
+                            <dd>
+                                <span class="input-text">
+                                    <input type="text" id="INP_1">
+                                </span>
+                            </dd>
+                        </dl>
+                        <dl class="col-half">
+                            <dt>
+                                <label for="INP_2">Title</label>
+                            </dt>
+                            <dd>
+                                <span class="input-text">
+                                    <input type="text" id="INP_2">
+                                </span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-input">
+                        <dl class="col-full">
+                            <dt>
+                                <label for="INP_3">Title</label>
+                            </dt>
+                            <dd>
+                                <span class="input-text">
+                                    <input type="text" id="INP_3">
+                                </span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-input">
+                        <dl class="col-full">
+                            <dt>Require Title<em class="required">필수항목</em></dt>
+                            <dd>
+                                <span class="input-text">
+                                    <input type="text" id="INP_4">
+                                </span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-input">
+                        <dl class="col-full">
+                            <dt>Require Title<em class="required">필수항목</em></dt>
+                            <dd>
+                                <span class="input-textarea">
+                                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                                </span>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+    <script src="./js/ui.js"></script>
+
+</body>
+</html>

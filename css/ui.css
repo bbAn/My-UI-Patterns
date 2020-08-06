@@ -1,0 +1,455 @@
+@charset "utf-8";
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    padding: 20px;
+    line-height: 1;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+h1 {
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+h2 {
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+h3 {
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+h4, h5 {
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+h5 {
+    padding-left: 10px;
+}
+hr {
+    margin-bottom: 60px;
+}
+ul, ol, li {
+    list-style: none;
+}
+section {
+}
+.ui-article {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 40px;
+}
+.ui-article h3 {
+    width: 150px;
+}
+.ui-article .ui-inner {
+    width: calc(100% - 150px);
+    padding: 20px;
+    border: 1px solid #dadce0;
+    border-radius: 3px;
+}
+
+.ui-article .ui-item {
+    margin-bottom: 25px;
+}
+span[class^=input-] {
+    display: inline-block;
+}
+span[class^=input-] + span {
+    margin-left: 10px;
+}
+
+/* 폼 _ 체크박스, 라디오 */
+.input-check--custom input[type='checkbox'],
+.input-radio--custom input[type='radio'] {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+}
+.input-check--custom input[type='checkbox'] + label,
+.input-radio--custom input[type='radio'] + label {
+    position: relative;
+    padding: 0 0 0 23px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 15px;
+    color: #666;
+}
+.input-check--custom input[type='checkbox'] + label::before,
+.input-radio--custom input[type='radio'] + label::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    line-height: .8;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background-color: #fff;
+}
+
+/* 폼 _ 체크박스 */
+.input-check--custom input[type='checkbox']:checked + label {
+    color: #4b6baa;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* 이미지 아이콘 사용할 경우 */
+.input-check--custom input[type='checkbox']:checked + label::before {
+    content: url(../images/arr-check.png);
+    text-align: center;
+    border-color: #34528c;
+    background: #4b6baa;
+}
+.input-check--custom span {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background: #fff;
+    transition: .2s ease all;
+}
+.input-check--custom span:before,
+.input-check--custom span:after {
+    content: ""; 
+    display: block; 
+    clear: both;
+    position: absolute;
+    transition: .2s ease all;
+    transform-origin: top left;
+}
+.input-check--custom span:before {
+    width:0px;
+    height:2px;
+    background:#fff;
+    top:5px;
+    left:3px;
+    transform: rotate(45deg);
+}
+.input-check--custom span:after {
+    width:0px;
+    height:2px;
+    background:#fff;
+    top:8px;
+    left:5px;
+    transform: rotate(-45deg);
+}
+.input-check--custom input[type='checkbox']:checked + label span {
+    border:1px solid #4b6baa;
+    background:#4b6baa;
+}
+.input-check--custom input[type='checkbox']:checked + label span:before {
+    width:5px;height:2px;
+}
+.input-check--custom input[type='checkbox']:checked + label span:after {
+    width:8px;
+    height:2px;
+    transition-delay: .1s;
+}
+
+/* 폼 _ 라디오 */
+.input-radio--custom input[type='radio'] + label {
+    font-size: 14px;
+}
+.input-radio--custom input[type='radio'] + label::before {
+    border-radius: 50%;
+}
+.input-radio--custom input[type='radio']:checked + label {
+    color: #4b6baa;
+    font-weight: bold;
+}
+.input-radio--custom input[type='radio'] + label::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    transform: scale(0);
+    border-radius: 50%;
+    background: #4b6baa;
+    transition: .2s ease-in-out;
+}
+.input-radio--custom input[type='radio']:checked + label::after {
+    transform: scale(1);
+    transition: .2s ease-in-out;
+}
+.input-radio--custom input[type='radio']:checked + label::before {
+    border-color: #4b6baa;
+}
+
+/* 폼 _ 토글 */
+.input-toggle {
+    display: inline-block;
+}
+.input-toggle input[type='checkbox'] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+.input-toggle label span {
+    display: inline-block;
+    position: relative;
+    width: 45px;
+    height: 19px;
+    border-radius: 20px;
+    border: 1px solid #dadce0;
+    background-color: #e7e7e7;
+    transition: 0.2s;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.input-toggle input[type='checkbox']:checked + span {
+    border-color: #213a6b;
+    background-color: #4b6baa;
+}
+.input-toggle span:after {
+    content: '';
+    display: block;
+    box-sizing: border-box;
+    width: 13px;
+    height: 13px;
+    margin: 2px 0 0 2px;
+    border: 1px solid #999;
+    border-radius: 100%;
+    background-color: #8f8f8f;
+    transform: translateX(0);
+    transition: 0.2s;
+}
+.input-toggle input[type='checkbox']:checked + span {
+    background-color: #4b6baa;
+}
+.input-toggle input[type='checkbox']:checked + span:after {
+    transform: translateX(200%);
+    background-color: #fff;
+}
+
+/* 폼 _ 셀렉트 박스 */
+.input-select {
+    position: relative;
+}
+.input-select select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 6px 30px 6px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #dadce0;
+    /* 이미지 아이콘 사용할 경우 */ 
+    /* background: #fff url(../images/arr-select.png) 95% center no-repeat; */
+
+}
+[class^=input-select]::before,
+[class^=input-select]::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 15px;
+    width: 8px;
+    height: 2px;
+    background-color: #8c8c8c;
+}
+[class^=input-select]::before {
+    transform: rotate(-45deg);
+    right: 12px;
+}
+[class^=input-select]::after {
+    transform: rotate(45deg);
+    right: 17px;
+}
+/* IE10+ 이상에서는 기본 디자인 적용 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .input-select select {
+       padding-right: 10px;
+    }
+    .input-select::before,
+    .input-select::after {
+        display: none;
+    }
+}
+.input-select--button {
+    position: relative;
+}
+.input-select--button button {
+    padding: 6px 30px 6px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #dadce0;
+    background: #fff;
+    cursor: pointer;
+}
+.input-select--button select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+    opacity: 0;
+    z-index: -1;
+}
+.input-select--button ul {
+    overflow: hidden;
+    border: 1px solid #999;
+    background: #fff;
+    z-index: 20;
+}
+.input-select--button ul li {
+    padding:  0 20px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+}
+.input-select--button ul li:hover {
+    background: #f2f2f2;
+    cursor: pointer;
+}
+F
+/* 폼 _ 텍스트필드 */
+.input-text,
+.input-textarea {
+    width: 100%;
+}
+.input-text input[type='text'],
+.input-textarea textarea {
+    width: 100%;
+    padding: 7px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 0;
+    border: 1px solid #dadce0;
+}
+.input-textarea textarea {
+    resize: none;
+    font-family: 'Noto Sans KR';
+}
+.input-text input[type='text']::-ms-clear {
+    display: none;
+}
+
+/* 폼 _ 파일첨부 */
+
+.input-file {
+    padding: 16px;
+    border: 1px solid #dadce0;
+    background: #edf2fa;
+}
+.input-file input[type="file"] {
+    display: none;
+}
+.input-file button {
+    width: 70px;
+    padding: 5px;
+    font-size: 12px;
+    outline: 0;
+    color: #fff;
+    border: 0;
+    vertical-align: middle;
+    background: #4c6bab;
+}
+.input-file .file-list {
+    margin: 0;
+    padding: 0;
+}
+.input-file .file-list li {
+    display: inline-block;
+    height: 27px;
+    margin: 9px 9px 0 0;
+    padding-left: 8px;
+    font-size: 12px;
+    color: #888;
+    background: #fff;
+}
+.input-file .file-list li .btn-del {
+    display: inline-block;
+    position: relative;
+    width: 27px;
+    height: 27px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.input-file .file-list li .btn-del::before,
+.input-file .file-list li .btn-del::after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 12px;
+    width: 14px;
+    height: 1px;
+    background: #fff;
+}
+.input-file .file-list li .btn-del::before {
+    transform: rotate(-45deg);
+ }
+ .input-file .file-list li .btn-del::after {
+    transform: rotate(45deg);
+}
+.input-file--dragndrop .drop-area {
+    min-height: 170px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #dadce0;
+    background-color: #edf2fa;
+}
+
+/* 폼 _ 레이아웃 */
+.col-input {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 11px 0;
+}
+.col-input .col-full {
+    width: 100%;
+}
+.col-input .col-half {
+    width: 50%;
+}
+.col-input dl {
+    padding: 0 7px;
+}
+.col-input dl dt,
+.col-input dl dt label {
+    font-size: 12px;
+    color: #888;
+}
+.col-input dl dt {
+    position: relative;
+    margin-bottom: 8px;
+}
+.col-input dl dt .required {
+    font-size: 0;
+    color: #f00;
+}
+.col-input dl dt .required::after {
+    content: '*';
+    display: inline-block;
+    font-size: 12px;
+}
+.col-input dl dd {
+    background: #f2f2f2;
+}
+.col-input dl dd [class^='input-'] {
+    width: 100%;
+}
