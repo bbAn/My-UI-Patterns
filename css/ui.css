@@ -67,9 +67,9 @@ span[class^=input-] + span {
 /* 폼 _ 체크박스, 라디오 */
 .input-check--custom input[type='checkbox'],
 .input-radio--custom input[type='radio'] {
-        position: absolute;
-        opacity: 0;
-        z-index: -1;
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
 }
 .input-check--custom input[type='checkbox'] + label,
 .input-radio--custom input[type='radio'] + label {
@@ -452,4 +452,43 @@ F
 }
 .col-input dl dd [class^='input-'] {
     width: 100%;
+}
+
+/* 탭 _ 텍스트필드 */
+.ui-tab--type1 {
+    display: flex;
+    position: relative;
+}
+.ui-tab--type1 li {
+    display: block;
+    width: calc( 100% / 3);
+}
+.ui-tab--type1 li input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+.ui-tab--type1 li input[type="radio"]:checked ~ .tab-cont {
+    display: block;
+}
+.ui-tab--type1 li label {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    background: #8f8f8f;
+}
+.ui-tab--type1 li label:focus {
+    outline: medium;
+}
+.ui-tab--type1 li input[type="radio"]:checked ~ label {
+    background: #4c6bab;
+}
+.ui-tab--type1 .tab-cont {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 36px;
+    width: 100%;
+    padding-top: 10px;
 }
