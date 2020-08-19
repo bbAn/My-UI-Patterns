@@ -36,8 +36,6 @@ hr {
 ul, ol, li {
     list-style: none;
 }
-section {
-}
 .ui-article {
     display: flex;
     flex-wrap: wrap;
@@ -93,7 +91,7 @@ span[class^=input-] + span {
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 2px;
-    background-color: #fff;
+    background: #fff;
 }
 
 /* 폼 _ 체크박스 */
@@ -209,14 +207,14 @@ span[class^=input-] + span {
     height: 19px;
     border-radius: 20px;
     border: 1px solid #dadce0;
-    background-color: #e7e7e7;
+    background: #e7e7e7;
     transition: 0.2s;
     vertical-align: middle;
     cursor: pointer;
 }
 .input-toggle input[type='checkbox']:checked + span {
     border-color: #213a6b;
-    background-color: #4b6baa;
+    background: #4b6baa;
 }
 .input-toggle span:after {
     content: '';
@@ -227,16 +225,16 @@ span[class^=input-] + span {
     margin: 2px 0 0 2px;
     border: 1px solid #999;
     border-radius: 100%;
-    background-color: #8f8f8f;
+    background: #8f8f8f;
     transform: translateX(0);
     transition: 0.2s;
 }
 .input-toggle input[type='checkbox']:checked + span {
-    background-color: #4b6baa;
+    background: #4b6baa;
 }
 .input-toggle input[type='checkbox']:checked + span:after {
     transform: translateX(200%);
-    background-color: #fff;
+    background: #fff;
 }
 
 /* 폼 _ 셀렉트 박스 */
@@ -263,7 +261,7 @@ span[class^=input-] + span {
     top: 15px;
     width: 8px;
     height: 2px;
-    background-color: #8c8c8c;
+    background: #8c8c8c;
 }
 [class^=input-select]::before {
     transform: rotate(-45deg);
@@ -313,7 +311,7 @@ span[class^=input-] + span {
     border: 1px solid #999;
     background: #fff;
     z-index: 20;
-}
+}   
 .input-select--button ul li {
     padding:  0 20px;
     height: 30px;
@@ -410,7 +408,7 @@ F
     text-align: center;
     border-radius: 5px;
     border: 1px solid #dadce0;
-    background-color: #edf2fa;
+    background: #edf2fa;
 }
 
 /* 폼 _ 레이아웃 */
@@ -491,4 +489,135 @@ F
     top: 36px;
     width: 100%;
     padding-top: 10px;
+}
+
+/* 아이콘 _ 화살표 */
+[class^=ico-] {
+    position: relative;
+    height: 30px;
+}
+.ico-arrow {
+    /* position: relative; */
+}
+.ico-arrow.type1::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 1px;
+    top: 7px;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #4c6bab;
+    border-width: 0 2px 2px 0;
+    transform: rotate(-45deg);
+}
+.ico-arrow.type2::before,
+.ico-arrow.type2::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10px;
+    width: 15px;
+    height: 2px;
+    background: #4c6bab;
+    transition: all .5s cubic-bezier(.25, 1.7, .35, .8);
+}
+.ico-arrow.type2::before {
+    transform: rotate(45deg);
+    left: 0;
+}
+.ico-arrow.type2::after {
+    transform: rotate(-45deg);
+    left: 10px;
+}
+.ico-arrow.type2:hover::before {
+    transform: rotate(-45deg);
+}
+.ico-arrow.type2:hover::after {
+    transform: rotate(45deg);
+}
+
+/* 아이콘 _ x */
+.ico-close {
+    position: relative;
+}
+.ico-close::before,
+.ico-close::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 2px;
+    height: 20px;
+    background: #4c6bab;
+    transform-origin: 50% 50%;
+}
+.ico-close::before {
+    transform: rotate(-45deg);
+}
+.ico-close::after {
+    transform: rotate(45deg);
+}
+
+/* 아이콘 _ + - */
+.ico-plus {
+    display: block;
+    position: relative;
+    height: 20px;
+}
+.ico-plus::before,
+.ico-plus::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 20px;
+    height: 2px;
+    background: #4c6bab;
+}
+.ico-plus::after {
+    transform: rotate(-90deg);
+    transition: all .5s cubic-bezier(.25, 1.7, .35, .8);
+}
+.ico-plus:hover::after {
+    transform: rotate(0deg);
+}
+.ico-triangle {
+    display: block;
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-right-width: 20px;
+    border-left-width: 20px;
+}
+.ico-triangle.type1 {
+    border-bottom: 20px solid #4c6bab;
+}
+.ico-triangle.type2 {
+    border-bottom: 40px solid #4c6bab;
+}
+
+.ico-square::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    background: #4c6bab;
+}
+
+.ico-circle::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #4c6bab;
 }
