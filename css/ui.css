@@ -560,7 +560,7 @@ F
     transform: rotate(45deg);
 }
 
-/* 아이콘 _ + - */
+/* 아이콘 _ 플러스 */
 .ico-plus {
     display: block;
     position: relative;
@@ -584,6 +584,8 @@ F
 .ico-plus:hover::after {
     transform: rotate(0deg);
 }
+
+/* 아이콘 _ 삼각형 */
 .ico-triangle {
     display: block;
     width: 0;
@@ -599,6 +601,7 @@ F
     border-bottom: 40px solid #4c6bab;
 }
 
+/* 아이콘 _ 사각형 */
 .ico-square::before {
     content: '';
     display: block;
@@ -610,6 +613,7 @@ F
     background: #4c6bab;
 }
 
+/* 아이콘 _ 원 */
 .ico-circle::before {
     content: '';
     display: block;
@@ -620,4 +624,98 @@ F
     height: 20px;
     border-radius: 50%;
     background: #4c6bab;
+}
+
+/* 트리 구조 */
+.tree-list {
+    position: relative;
+}
+.tree-list::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: 0;
+    width: 1px;
+    background: #dddee2;
+}
+.tree-list:first-child::before {
+    height: calc(100% - 38px);
+}
+.tree-list .tree-item {
+    width: 100%;
+}
+.tree-list .tree-item .item-inner {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px 25px;
+    border: 1px solid #dadce0;
+    background: #fff;
+}
+.tree-list .tree-list {
+    padding-left: 50px;
+}
+.tree-list .tree-list .tree-item {
+    position: relative;
+}
+.tree-list .tree-list .tree-item::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -35px;
+    top: 11px;
+    width: 35px;
+    height: 1px;
+    background: #dddee2;
+}
+.tree-list .tree-item .tree-list {
+    display: none;
+}
+.tree-list .tree-item.is-selected > .tree-list {
+    display: block;
+}
+.tree-list .tree-item.is-selected > .item-inner {
+    background: #edf1fa;
+    border-color: #4c6bab;
+}
+.tree-list .tree-item .tree-list:before {
+    top: -10px;
+    height: calc(100% - 16px);
+}
+.tree-list .tree-item .btn-toggle {
+    display: inline-block;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    width: 19px;
+    height: 19px;
+    font-size: 0;
+    border: 1px solid #7f7f7f;
+    background: #f3f4f5;
+    outline: 0;
+}
+.tree-list .tree-item .btn-toggle::before,
+.tree-list .tree-item .btn-toggle::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    width: 7px;
+    height: 1px;
+    background: #7b7b7b;
+}
+.tree-list .tree-item .btn-toggle.opened {
+    border-color: #4c6bab;
+    background: #4c6bab;
+}
+.tree-list .tree-item .btn-toggle::after {
+    transform: rotate(-90deg);
+}
+.tree-list .tree-item .btn-toggle.opened::after {
+    transform: rotate(0deg);
+    background: #fff;
 }

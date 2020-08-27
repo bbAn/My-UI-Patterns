@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree type</title>
+    <link rel="stylesheet" href="./css/ui.css">
+</head>
+<body>
+    <h1>Tree</h1>
+    <hr>
+    <section>
+        <article class="ui-article">
+            <h3>Tab (radio)</h3>
+            <div class="ui-inner">
+                <div class="ui-item">
+                    <ul class="tree-list">
+                        <li class="tree-item">
+                            <div class="item-inner">
+                                <!-- 하위 목록 있는 경우 버튼 노출 -->
+                                <button type="button" class="btn-toggle">목록열기</button>
+                                depth1
+                            </div>
+                            <ul class="tree-list">
+                                <li class="tree-item">
+                                    <div class="item-inner">
+                                        <button type="button" class="btn-toggle">목록열기</button>
+                                        depth2
+                                    </div>
+                                    <ul class="tree-list">
+                                        <li class="tree-item">
+                                            <div class="item-inner">
+                                                <button type="button" class="btn-toggle">목록열기</button>
+                                                depth3
+                                            </div>
+                                            <ul class="tree-list">
+                                                <li class="tree-item">
+                                                    <div class="item-inner">
+                                                        depth4
+                                                    </div>
+                                                </li>
+                                                <li class="tree-item">
+                                                    <div class="item-inner">
+                                                        depth4
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="tree-item">
+                                            <div class="item-inner">
+                                                depth3
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="tree-item">
+                                    <div class="item-inner">
+                                        depth2
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="tree-item">
+                            <div class="item-inner">
+                                depth1
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </article>
+
+    </section>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const btnTree = document.querySelectorAll('.tree-list li .item-inner .btn-toggle');
+            Array.prototype.forEach.call(btnTree, function(el, i){
+                btnTree[i].addEventListener('click', function() {
+                    this.classList.toggle('opened');
+                    if (this.innerHTML === '목록열기') {
+                        this.innerHTML = '목록닫기';
+                    } else {
+                        this.innerHTML = '목록열기';
+                    }
+                    this.parentNode.parentNode.classList.toggle('is-selected');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
