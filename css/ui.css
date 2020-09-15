@@ -238,6 +238,9 @@ span[class^=input-] + span {
 }
 
 /* 폼 _ 셀렉트 박스 */
+select::-ms-expand {
+	display: none;
+}
 .input-select {
     position: relative;
 }
@@ -270,16 +273,6 @@ span[class^=input-] + span {
 [class^=input-select]::after {
     transform: rotate(45deg);
     right: 17px;
-}
-/* IE10+ 이상에서는 기본 디자인 적용 */
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    .input-select select {
-       padding-right: 10px;
-    }
-    .input-select::before,
-    .input-select::after {
-        display: none;
-    }
 }
 .input-select--button {
     position: relative;
